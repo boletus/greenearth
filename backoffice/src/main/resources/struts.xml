@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+    <!-- Constants -->
+    <constant name="struts.devMode" value="false"/>
+    <constant name="struts.action.extension" value="do"/>
+    <constant name="struts.objectFactory" value="spring"/>
+
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <global-results>
+            <result name="home" type="redirectAction">home</result>
+            <result name="dataAccessFailure">/WEB-INF/jsp/dataAccessFailure.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="org.springframework.dao.DataAccessException" result="dataAccessFailure"/>
+        </global-exception-mappings>
+
+        <action name="home">
+            <result name="success">/WEB-INF/jsp/home.jsp</result>
+        </action>        
+    </package>
+    
+    <include file="actions/struts-commons.xml" />
+</struts>

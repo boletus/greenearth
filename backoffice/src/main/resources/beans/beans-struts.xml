@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-lazy-init="true" default-autowire="byName">
+
+	<bean id="gatewayAction" class="com.enorbus.smp.admin.action.GatewayAction" scope="prototype"/>
+	<bean id="productAction" class="com.enorbus.smp.admin.action.ProductAction" scope="prototype"/>
+	<bean id="serviceAction" class="com.enorbus.smp.admin.action.ServiceAction" scope="prototype"/>
+	<bean id="flowAction" class="com.enorbus.smp.admin.action.FlowAction" scope="prototype"/>
+	<bean id="flowCommandAction" class="com.enorbus.smp.admin.action.FlowCommandAction" scope="prototype"/>
+	<bean id="actionModuleAction" class="com.enorbus.smp.admin.action.ActionModuleAction" scope="prototype"/>
+	<bean id="actionParamAction" class="com.enorbus.smp.admin.action.ActionParamAction" scope="prototype"/>
+	<bean id="conditionModuleAction" class="com.enorbus.smp.admin.action.ConditionModuleAction" scope="prototype"/>
+	<bean id="conditionParamAction" class="com.enorbus.smp.admin.action.ConditionParamAction" scope="prototype"/>
+	<bean id="flowPicDataAction" class="com.enorbus.smp.admin.action.FlowPicDataAction" scope="prototype"/>
+	<bean id="flowPicDataDraftAction" class="com.enorbus.smp.admin.action.FlowPicDataDraftAction" scope="prototype"/>
+	<bean id="commandAction" class="com.enorbus.smp.admin.action.CommandAction" scope="prototype"/>
+	<bean id="operatorAction" class="com.enorbus.smp.admin.action.OperatorAction" scope="prototype"/>
+	<bean id="roleAction" class="com.enorbus.smp.admin.action.RoleAction" scope="prototype"/>
+	<bean id="permissionAction" class="com.enorbus.smp.admin.action.PermissionAction" scope="prototype"/>
+	<bean id="moduleAction" class="com.enorbus.smp.admin.action.ModuleAction" scope="prototype"/>
+	<bean id="smsorderAction" class="com.enorbus.smp.admin.action.SmsOrderAction" scope="prototype"/>
+	<bean id="smsorderLogAction" class="com.enorbus.smp.admin.action.SmsOrderLogAction" scope="prototype"/>
+	<bean id="smsmoAction" class="com.enorbus.smp.admin.action.SmsMoAction" scope="prototype"/>
+	<bean id="smsmtAction" class="com.enorbus.smp.admin.action.SmsMtAction" scope="prototype"/>
+	<bean id="mmsorderAction" class="com.enorbus.smp.admin.action.MmsOrderAction" scope="prototype"/>
+	<bean id="mmsorderLogAction" class="com.enorbus.smp.admin.action.MmsOrderLogAction" scope="prototype"/>
+	<bean id="mmsmtAction" class="com.enorbus.smp.admin.action.MmsMtAction" scope="prototype"/>
+	<bean id="mmsInfoAction" class="com.enorbus.smp.admin.action.MmsInfoAction" scope="prototype"/>
+	<bean id="mmsOrderDataAction" class="com.enorbus.smp.admin.action.MmsOrderDataAction" scope="prototype"/>
+	<bean id="mmstimeAction" class="com.enorbus.smp.admin.action.MmsTimeAction" scope="prototype"/>
+	<bean id="testAction" class="com.enorbus.smp.admin.action.TestAction" scope="prototype"/>
+	<bean id="smsOrderDataAction" class="com.enorbus.smp.admin.action.SmsOrderDataAction" scope="prototype"/>
+	<bean id="smsTimeDataAction" class="com.enorbus.smp.admin.action.SmsTimeDataAction" scope="prototype"/>
+	<bean id="smsTimeDataLogAction" class="com.enorbus.smp.admin.action.SmsTimeDataLogAction" scope="prototype"/>
+	<bean id="commonAction" class="com.enorbus.smp.admin.action.CommonAction" scope="prototype"/>
+	<bean id="smsStatisticAction" class="com.enorbus.smp.admin.action.SmsStatisticAction" scope="prototype"/>
+	<bean id="subStatisticAction" class="com.enorbus.smp.admin.action.SubStatisticAction" scope="prototype"/>
+    <bean id="smsFeeSendAction" class="com.enorbus.smp.admin.action.SmsFeeSendAction" scope="prototype"/>
+</beans>
