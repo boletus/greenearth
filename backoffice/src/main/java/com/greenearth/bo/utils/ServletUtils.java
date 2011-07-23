@@ -1,9 +1,9 @@
 /**
- * Copyright (c) 2005-2009 springside.org.cn
+ * Copyright (c) 2005-2011 springside.org.cn
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * 
- * $Id: ServletUtils.java 969 2010-03-01 14:50:35Z calvinxiu $
+ * $Id: ServletUtils.java 1595 2011-05-11 16:41:16Z calvinxiu $
  */
 package com.greenearth.bo.utils;
 
@@ -13,33 +13,33 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.util.Assert;
 
 /**
  * Http与Servlet工具类.
  * 
  * @author calvin
  */
-public class ServletUtils {
+public abstract class ServletUtils {
 
-	//-- content-type 常量定义 --//
-	public static final String TEXT_TYPE = "text/plain";
-	public static final String JSON_TYPE = "application/json";
-	public static final String XML_TYPE = "text/xml";
+	//-- Content Type 定义 --//
+	public static final String EXCEL_TYPE = "application/vnd.ms-excel";
 	public static final String HTML_TYPE = "text/html";
 	public static final String JS_TYPE = "text/javascript";
-	public static final String EXCEL_TYPE = "application/vnd.ms-excel";
+	public static final String JSON_TYPE = "application/json";
+	public static final String XML_TYPE = "text/xml";
+	public static final String TEXT_TYPE = "text/plain";
 
-	//-- header 定义 --//
+	//-- Header 定义 --//
 	public static final String AUTHENTICATION_HEADER = "Authorization";
 
+	//-- 常用数值定义 --//
 	public static final long ONE_YEAR_SECONDS = 60 * 60 * 24 * 365;
 
 	/**
-	 * 设置客户端缓存过期时间 Header.
+	 * 设置客户端缓存过期时间 的Header.
 	 */
 	public static void setExpiresHeader(HttpServletResponse response, long expiresSeconds) {
 		//Http 1.0 header
@@ -49,14 +49,14 @@ public class ServletUtils {
 	}
 
 	/**
-	 * 设置客户端无缓存Header.
+	 * 设置禁止客户端缓存的Header.
 	 */
-	public static void setNoCacheHeader(HttpServletResponse response) {
+	public static void setDisableCacheHeader(HttpServletResponse response) {
 		//Http 1.0 header
-		response.setDateHeader("Expires", 0);
+		response.setDateHeader("Expires", 1L);
 		response.addHeader("Pragma", "no-cache");
 		//Http 1.1 header
-		response.setHeader("Cache-Control", "no-cache");
+		response.setHeader("Cache-Control", "no-cache, no-store, max-age=0");
 	}
 
 	/**
@@ -140,13 +140,12 @@ public class ServletUtils {
 	/**
 	 * 取得带相同前缀的Request Parameters.
 	 * 
-	 * 返回的结果Parameter名已去除前缀.
+	 * 返回的结果的Parameter名已去除前缀.
 	 */
-	@SuppressWarnings("unchecked")
-	public static Map getParametersStartingWith(HttpServletRequest request, String prefix) {
-		Assert.notNull(request, "Request must not be null");
+	public static Map<String, Object> getParametersStartingWith(ServletRequest request, String prefix) {
+		AssertUtils.notNull(request, "Request must not be null");
 		Enumeration paramNames = request.getParameterNames();
-		Map params = new TreeMap();
+		Map<String, Object> params = new TreeMap<String, Object>();
 		if (prefix == null) {
 			prefix = "";
 		}
@@ -155,7 +154,7 @@ public class ServletUtils {
 			if ("".equals(prefix) || paramName.startsWith(prefix)) {
 				String unprefixed = paramName.substring(prefix.length());
 				String[] values = request.getParameterValues(paramName);
-				if (values == null || values.length == 0) {//NOSONAR
+				if (values == null || values.length == 0) {
 					// Do nothing, no values found at all.
 				} else if (values.length > 1) {
 					params.put(unprefixed, values);
@@ -168,10 +167,10 @@ public class ServletUtils {
 	}
 
 	/**
-	 * 对Http Basic验证的 Header进行编码.
+	 * 客户端对Http Basic验证的 Header进行编码.
 	 */
 	public static String encodeHttpBasic(String userName, String password) {
 		String encode = userName + ":" + password;
-		return "Basic " + EncodeUtils.base64Encode(encode.getBytes());
+		return "Basic " + EncodeUtils.encodeBase64(encode.getBytes());
 	}
 }

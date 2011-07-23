@@ -36,16 +36,4 @@ public class District {
 	public void setName(String name) {
 		this.name = name;
 	}
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("District [id=");
-		builder.append(id);
-		builder.append(", city=");
-		builder.append(city);
-		builder.append(", name=");
-		builder.append(name);
-		builder.append("]");
-		return builder.toString();
-	}
 }

@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 public class City {
 	private Integer id;
@@ -30,24 +32,11 @@ public class City {
 	}
 	
 	@OneToMany(mappedBy = "city")
+	@JsonIgnore
 	public List<District> getDistricts() {
 		return districts;
 	}
 	public void setDistricts(List<District> districts) {
 		this.districts = districts;
 	}
-	
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("City [id=");
-		builder.append(id);
-		builder.append(", name=");
-		builder.append(name);
-		builder.append(", districts=");
-		builder.append(districts);
-		builder.append("]");
-		return builder.toString();
-	}
-	
 }
