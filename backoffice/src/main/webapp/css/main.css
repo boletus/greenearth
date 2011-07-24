@@ -50,6 +50,10 @@ Prototype Style Sheet (empty commented stylesheet)
     background-image: url( ../icons/fam/add16.gif ) !important;
 }
 
+.delete16 {
+    background-image: url( ../icons/fam/delete.gif ) !important;
+}
+
 /* =Links
 -----------------------------------------------------------------------------*/
 
