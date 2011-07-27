@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1627/springside4/trunk/modules/core/src/main/java/org/springside/modules/mapper
+END
+CollectionMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/1627/springside4/trunk/modules/core/src/main/java/org/springside/modules/mapper/CollectionMapper.java
+END
+JaxbMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1591/springside4/trunk/modules/core/src/main/java/org/springside/modules/mapper/JaxbMapper.java
+END
+ObjectMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1627/springside4/trunk/modules/core/src/main/java/org/springside/modules/mapper/ObjectMapper.java
+END
+JsonMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1574/springside4/trunk/modules/core/src/main/java/org/springside/modules/mapper/JsonMapper.java
+END
