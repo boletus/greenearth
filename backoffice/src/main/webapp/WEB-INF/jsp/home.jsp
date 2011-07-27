@@ -3,7 +3,7 @@
 
 <head>
 <title>Complex Layout</title>
-<link rel="stylesheet" type="text/css" href="${ctx}/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="${ctx}/ext/resources/css/ext-all.css" />
 <link rel="stylesheet" type="text/css" href="${ctx}/css/main.css" />
 <style type="text/css">
 p {
@@ -19,8 +19,8 @@ p {
     background-image:url(${ctx}/icons/fam/information.png);
 }
 </style>
-<script type="text/javascript" src="${ctx}/js/bootstrap.js"></script>
-<%-- <script type="text/javascript" src="${ctx}/js/ext-bo.js"></script> 
+<script type="text/javascript" src="${ctx}/ext/bootstrap.js"></script>
+<%-- <script type="text/javascript" src="${ctx}/app.js"></script> 
 <script type="text/javascript" src="${ctx}/js/Ext.lingo.JsonGrid.js"></script>
 <script type="text/javascript" src="${ctx}/js/Ext.lingo.JsonTree.js"></script>
 <script type="text/javascript" src="${ctx}/js/Ext.ux.PageSizePlugin.js"></script>
